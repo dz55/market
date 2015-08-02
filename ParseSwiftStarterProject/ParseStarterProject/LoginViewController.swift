@@ -7,7 +7,10 @@
 import UIKit
 import Parse
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
+    //MARK : Properties
+    @IBOutlet weak var pwInput: UITextField!
+    @IBOutlet weak var unInput: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,20 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK : Actions
+    @IBAction func loginPressed(sender: AnyObject) {
+        let username = String(unInput.text)
+        let pass = String(pwInput.text)
+        PFUser.logInWithUsernameInBackground(username, password:pass) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+            } else {
+                // The login failed. Check error to see why.
+            }
+        }
     }
 }
 
