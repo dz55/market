@@ -29,6 +29,16 @@ class LoginViewController: UIViewController {
     
     //MARK : Actions
     @IBAction func loginPressed(sender: AnyObject) {
+        let username = String(unInput.text)
+        let pass = String(pwInput.text)
+        PFUser.logInWithUsernameInBackground(username, password:pass) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+            } else {
+                // The login failed. Check error to see why.
+            }
+        }
     }
 }
 
