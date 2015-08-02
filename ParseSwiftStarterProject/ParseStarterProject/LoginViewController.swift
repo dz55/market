@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //
 //  Copyright 2011-present Parse Inc. All rights reserved.
 //
