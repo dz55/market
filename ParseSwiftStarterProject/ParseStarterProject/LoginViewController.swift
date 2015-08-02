@@ -8,6 +8,9 @@ import UIKit
 import Parse
 
 class LoginViewController: UIViewController {
+    //MARK : Properties
+    @IBOutlet weak var pwInput: UITextField!
+    @IBOutlet weak var unInput: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,10 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK : Actions
+    @IBAction func loginPressed(sender: AnyObject) {
     }
 }
 
